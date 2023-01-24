@@ -17,7 +17,7 @@ const ulEl = document.querySelector('.gallery');
 ulEl.style.listStyle = 'none';
 ulEl.style.display = 'flex';
 ulEl.style.gap = '30px';
-rightLength
+
 
 const imageEl = images.map(image => {
   return `<li><img src='${image.url}' alt='${image.alt}' width=300/>`
