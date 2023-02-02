@@ -1,3 +1,21 @@
+const inputEl = document.querySelector("#validation-input");
+const rigthLength = Number(inputEl.getAttribute('data-length'));
+
+inputEl.addEventListener('blur', (event) => {
+    if (event.currentTarget.value.length === rigthLength) {
+        changeClasses('invalid', 'valid');
+    } else {
+        changeClasses('valid', 'invalid');
+    }
+});
+
+function changeClasses(wrongClass, rightClass) {
+    inputEl.classList.add(rightClass);
+    inputEl.classList.remove(wrongClass);
+}; 
+    
+// =========================== Previous code =========================
+
 // const inputEl = document.querySelector("#validation-input");
 // const rigthLength = Number(inputEl.getAttribute('data-length'));
 
@@ -11,24 +29,4 @@
 //     }
 // });
 
-// ============================
-const inputEl = document.querySelector("#validation-input");
-const rigthLength = Number(inputEl.getAttribute('data-length'));
-
-inputEl.addEventListener('blur', (event) => {
-    if (event.currentTarget.value.length === rigthLength) {
-        changeClasses();
-    } else {
-        changeClasses();
-    }
-});
-
-function changeClasses(x, y) {
-    if (!inputEl.classList.contains("valid")) {
-        inputEl.classList.add("valid");
-        inputEl.classList.remove("invalid");
-    } 
-    elem.classList.replace("valid", "invalid")
-        // inputEl.classList.add("invalid");
-        // inputEl.classList.remove("valid");
-};
+    
